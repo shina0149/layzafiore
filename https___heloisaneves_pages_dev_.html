@@ -1,0 +1,918 @@
+<html lang="pt-BR" data-arp="">
+  <body class="age-gate-pending user-verified-v7" __processed_fae77cc0-0f5d-4dd3-90fc-f2cd95be2be2__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6Im5pbWxtZWpibW5lY25hZ2hnbWJhaG1iYWRkaGpiZWNnIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZGlzYWJsZWQiLCJDT05GSUciOiJkaXNhYmxlZCJ9LCJ2ZXJzaW9uIjoiMi4wLjQ3Iiwic2NvcmUiOjIwMDQ3fV0=">
+    <div id="verification-screen-v7" bis_skin_checked="1" style="display: none !important;">
+        <div class="age-card-v7" bis_skin_checked="1">
+            
+            <h1 class="age-title-v7">Confirmação de Idade</h1>
+            <p class="age-text-v7">Este conteúdo é destinado exclusivamente para maiores de 18 anos. Por favor, confirme sua idade para continuar.</p>
+            <button class="age-button-v7" id="btn-confirm-age-v7">Tenho mais de 18 anos</button>
+        </div>
+    </div>
+    <div id="main-site-wrapper-v7" bis_skin_checked="1" style="display: block !important;">
+    
+    
+    <!-- Cabeçalho -->
+    
+
+    <style>
+      .popup-compra {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: #f68f72;
+        border: 2px solid #e2e2e2;
+        border-radius: 14px;
+        padding: 14px 18px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        font-family: Arial, sans-serif;
+        color: #fff;
+        z-index: 9999;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: popupLoop 30s infinite;
+      }
+
+      .popup-compra .texto {
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 500;
+      }
+
+      @keyframes popupLoop {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        5% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        16.66% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        16.67% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+      }
+    </style>
+
+    <div class="popup-compra" bis_skin_checked="1">
+      <div class="texto" bis_skin_checked="1">🔔 Alguém acabou de <b>Assinar um Plano</b>!</div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+      <!-- Seção de Perfil com Banner e Foto -->
+      <div class="profile-section" style="position: relative; margin-bottom: 80px" bis_skin_checked="1">
+        <!-- Banner -->
+        <div class="banner" style="position: relative" bis_skin_checked="1">
+          
+          <div class="banner-overlay" style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: rgba(0, 0, 0, 0.3);
+              border-radius: 10px;
+            " bis_skin_checked="1"></div>
+          <div class="banner-content" style="position: absolute; bottom: 16px; left: 16px; color: white" bis_skin_checked="1">
+            <h2 style="margin: 0; font-size: 24px">Heloisa Neves</h2>
+            <div class="banner-stats" style="
+                display: flex;
+                gap: 16px;
+                margin-top: 8px;
+                align-items: center;
+              " bis_skin_checked="1">
+              <div class="stat" style="display: flex; align-items: center; gap: 4px" bis_skin_checked="1">
+                <!-- Icone Imagens -->
+                <svg style="width: 17px; height: auto; fill: white" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M64 64C46.3 64 32 78.3 32 96V329.4l67.7-67.7c15.6-15.6 40.9-15.6 56.6 0L224 329.4 355.7 197.7c15.6-15.6 40.9-15.6 56.6 0L480 265.4V96c0-17.7-14.3-32-32-32H64zM32 374.6V416c0 17.7 14.3 32 32 32h41.4l96-96-67.7-67.7c-3.1-3.1-8.2-3.1-11.3 0L32 374.6zM389.7 220.3c-3.1-3.1-8.2-3.1-11.3 0L150.6 448H448c17.7 0 32-14.3 32-32V310.6l-90.3-90.3zM0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm160 48a16 16 0 1 0-32 0 16 16 0 1 0 32 0zm-64 0a48 48 0 1 1 96 0 48 48 0 1 1-96 0z"></path>
+                </svg>
+                <span style="color: white; font-size: 14px">102</span>
+              </div>
+              <div class="stat" style="display: flex; align-items: center; gap: 4px" bis_skin_checked="1">
+                <!-- Icone Vídeos -->
+                <svg style="width: 17px; height: auto; fill: white" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M64 96c-17.7 0-32 14.3-32 32V384c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V128c0-17.7-14.3-32-32-32H64zM0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64v47.2 160.8 47.2c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zm519.4 283.3L416 354.4V317.9l118.8 65.4c.9.5 1.9.8 3 .8 3.4 0 6.2-2.8 6.2-6.2V134.2c0-3.4-2.8-6.2-6.2-6.2-1 0-2.1.3-3 .8L416 194.1V157.6l103.4-56.9c5.6-3.1 12-4.7 18.4-4.7 21.1 0 38.2 17.1 38.2 38.2V377.8c0 21.1-17.1 38.2-38.2 38.2-6.4 0-12.8-1.6-18.4-4.7z"></path>
+                </svg>
+                <span style="color: white; font-size: 14px">64</span>
+              </div>
+              <div class="stat" style="display: flex; align-items: center; gap: 4px" bis_skin_checked="1">
+                <!-- Icone Curtidas -->
+                <svg style="
+                    width: 16px;
+                    height: auto;
+                    stroke: white;
+                    stroke-width: 2;
+                  " viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span style="color: white; font-size: 14px">5K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foto de Perfil Sobreposta -->
+        <div style="
+            position: absolute;
+            bottom: -60px; /* metade da altura do círculo */
+            left: 24%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            overflow: visible; /* deixa o badge aparecer fora do círculo */
+          " bis_skin_checked="1">
+          <!-- Círculo que recorta a imagem -->
+          <div style="
+              width: 120px;
+              height: 120px;
+              border: 4px solid red;
+              border-radius: 50%;
+              overflow: hidden; /* recorta a imagem no círculo */
+              background: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            " bis_skin_checked="1">
+            
+          </div>
+          <!-- Badge posicionado fora do círculo -->
+          <div style="
+              position: absolute;
+              bottom: -2px; /* negativo para ficar fora */
+              left: 50%;
+              transform: translateX(-50%);
+              background: red;
+              color: white;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 2px 6px;
+              border-radius: 4px;
+              white-space: nowrap;
+              z-index: 2;
+            " bis_skin_checked="1">
+            AO VIVO AGORA
+          </div>
+        </div>
+      </div>
+
+      <!-- Informações do Perfil -->
+      <div class="card profile-card" style="margin-top: 0px" bis_skin_checked="1">
+        <div class="card-content" style="padding-top: 14px" bis_skin_checked="1">
+          <div style="display: flex; align-items: center; gap: 4px" bis_skin_checked="1">
+            <span>Heloisa Neves</span>
+            <div style="width: 18px; height: 18px; margin-top: -4px" bis_skin_checked="1">
+              <svg class="svg-inline--fa fa-badge-check" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="badge-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path class="" fill="rgb(253, 115, 80)" d="M190.6 71.4C203 47.9 227.7 32 256 32s53 15.9 65.4 39.4c3.6 6.8 11.5 10.1 18.8 7.8c25.4-7.8 54.1-1.6 74.1 18.4s26.2 48.7 18.4 74.1c-2.3 7.3 1 15.2 7.8 18.8C464.1 203 480 227.7 480 256s-15.9 53-39.4 65.4c-6.8 3.6-10.1 11.5-7.8 18.8c7.8 25.4 1.6 54.1-18.4 74.1s-48.7 26.2-74.1 18.4c-7.3-2.3-15.2 1-18.8 7.8C309 464.1 284.3 480 256 480s-53-15.9-65.4-39.4c-3.6-6.8-11.5-10.1-18.8-7.8c-25.4 7.8-54.1 1.6-74.1-18.4s-26.2-48.7-18.4-74.1c2.3-7.3-1-15.2-7.8-18.8C47.9 309 32 284.3 32 256s15.9-53 39.4-65.4c6.8-3.6 10.1-11.5 7.8-18.8c-7.8-25.4-1.6-54.1 18.4-74.1s48.7-26.2 74.1-18.4c7.3 2.3 15.2-1 18.8-7.8zM256 0c-36.1 0-68 18.1-87.1 45.6c-33-6-68.3 3.8-93.9 29.4s-35.3 60.9-29.4 93.9C18.1 188 0 219.9 0 256s18.1 68 45.6 87.1c-6 33 3.8 68.3 29.4 93.9s60.9 35.3 93.9 29.4C188 493.9 219.9 512 256 512s68-18.1 87.1-45.6c33 6 68.3-3.8 93.9-29.4s35.3-60.9 29.4-93.9C493.9 324 512 292.1 512 256s-18.1-68-45.6-87.1c6-33-3.8-68.3-29.4-93.9s-60.9-35.3-93.9-29.4C324 18.1 292.1 0 256 0zM363.3 203.3c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L224 297.4l-52.7-52.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l64 64c6.2 6.2 16.4 6.2 22.6 0l128-128z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <p class="username">@heloisaneves</p>
+          <p class="bio">
+            Prazer amorr 💕, me chamo Helo e tenho 19 aninhos!! Aqui vc vai ver conteúdos meus exclusivos, tudo feito com carinho pra vc que gosta de algo mais picante, Tô liberando um packzinho de sexo e esguichadas especiais, e o melhor:
+            <span class="bio-highlight">as mídias vão ser atualizadas diariamente por lá</span>,
+            sempre coisa nova para olhar Se vc tá afim de acompanhar tudo de pertinho, chegou no lugar certo 💗
+            <br><br>
+            <b>Correee porque eu vou deixar somente 16 unidades disponíveis pra vocês comprarem!! bjssss 😘</b>
+          </p>
+          <div class="offer-timer" bis_skin_checked="1">
+            <p class="offer-timer-title">🔥 OFERTA COM TEMPO LIMITADO 🔥</p>
+            <p class="offer-timer-stock">⚡ Apenas 16 unidades disponíveis!</p>
+            <div class="offer-timer-countdown" bis_skin_checked="1">
+              <div class="offer-timer-unit" bis_skin_checked="1">
+                <div class="offer-timer-box" data-timer-hours="" bis_skin_checked="1">01</div>
+                <div class="offer-timer-label" bis_skin_checked="1">HORAS</div>
+              </div>
+              <div class="offer-timer-separator" bis_skin_checked="1">:</div>
+              <div class="offer-timer-unit" bis_skin_checked="1">
+                <div class="offer-timer-box" data-timer-minutes="" bis_skin_checked="1">01</div>
+                <div class="offer-timer-label" bis_skin_checked="1">MINUTOS</div>
+              </div>
+              <div class="offer-timer-separator" bis_skin_checked="1">:</div>
+              <div class="offer-timer-unit" bis_skin_checked="1">
+                <div class="offer-timer-box" data-timer-seconds="" bis_skin_checked="1">01</div>
+                <div class="offer-timer-label" bis_skin_checked="1">SEGUNDOS</div>
+              </div>
+            </div>
+            <p class="offer-timer-note">⏰ Não perca! A oferta expira em breve</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opções de Assinatura -->
+      <div class="card" style="display: none" bis_skin_checked="1">
+        <div class="card-header" bis_skin_checked="1">
+          <h3>Assine agora:</h3>
+        </div>
+        <div class="card-content" bis_skin_checked="1">
+          <p class="badge" style="display: block; width: fit-content">
+            🚨 Oferta de assinatura :
+          </p>
+          <a href="https://pay.lowify.com.br/checkout?product_id=Aw7vuG&amp;utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=" class="subscription-link" id="9e155652-8b99-1ab7-5d1b-3f4616233e15">
+            <button class="subscription-button primary-button pulse" id="f517c17d-b8ce-0b35-5ad4-3016a4eb45f6">
+              <b>2 MESES DE ACESSO</b>
+              <span class="price">R$ 24,90</span>
+            </button>
+          </a>
+          <p class="badge" style="
+              margin-top: -16px;
+              display: block;
+              width: fit-content;
+              font-weight: bold;
+            ">
+             Bônus 🎁 : Chamadas de vídeo,lives,áudios gemendo,e vídeos peladinha todos os dias!! 💋
+          </p>
+
+          <div class="promotions" bis_skin_checked="1">
+            <div class="promotions-header" bis_skin_checked="1">
+              <h4>Promoções</h4>
+              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+
+            <a href="https://pay.lowify.com.br/checkout?product_id=Bx7r4k&amp;utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=" class="subscription-link" id="58ed253a-e751-aaed-f354-5984793ace3f">
+              <button class="subscription-button outline-button" id="41b6c5e5-1ee1-466c-c6dd-c2369dfb962c">
+                <div class="button-left" bis_skin_checked="1">
+                  <span>
+                    <b> ACESSO SEMANAL  (25% OFF)<b></b></b></span><b><b>
+                      <span class="badge">Economia</span>
+                    </b></b>
+                </div>
+                <b><b>
+                    <span class="price highlight">R$ 19,90</span>
+                  </b></b></button><b><b> </b></b></a><b><b>
+                <a href="https://pay.lowify.com.br/checkout?product_id=ghaIwT&amp;utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=" class="subscription-link" id="0281924a-0c79-b762-0527-3f23455be2f7">
+                  <button class="subscription-button outline-button" id="579f1728-a8cd-3ca1-8548-a67a14bbe64c">
+                    <div class="button-left" bis_skin_checked="1">
+                      <span>
+                        <b>ACESSO MENSAL (10% OFF) <b></b></b></span><b><b>
+                          <span class="badge">Melhor oferta</span>
+                        </b></b>
+                    </div>
+                    <b><b>
+                        <span class="price highlight">R$ 29,90</span>
+                      </b></b></button><b><b> </b></b></a><b><b> </b></b></b></b>
+          </div>
+          <b><b><b> </b></b></b>
+        </div>
+        <b><b><b> </b></b></b>
+      </div>
+      <b><b><b>
+            <section class="gallery" style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                max-width: 600px;
+                margin: 0 auto;
+              ">
+              <div style="
+                  position: relative;
+                  width: 100%;
+                  border-radius: 10px;
+                  overflow: hidden;
+                " bis_skin_checked="1">
+                <video src="media/ok.mp4" controls="" loop="" playsinline="" webkit-playsinline="true" preload="auto" style="width: 100%; height: auto; display: block; background: #000"></video>
+              </div>
+
+              <div style="
+                  position: relative;
+                  width: 100%;
+                  border-radius: 10px;
+                  overflow: hidden;
+                " bis_skin_checked="1">
+                <video src="media/hota2.mp4" controls="" loop="" playsinline="" webkit-playsinline="true" preload="auto" style="width: 100%; height: auto; display: block; background: #000"></video>
+              </div>
+            </section>
+
+            <!-- Abas de Conteúdo -->
+            <div class="content-tabs" bis_skin_checked="1">
+              <div class="tabs" bis_skin_checked="1">
+                <button class="tab active" data-tab="posts" id="d93b82a9-8037-a65e-dc3c-5e9397d7fb63">
+                  93 postagens
+                </button>
+                <button class="tab" data-tab="media" id="4b476c39-b701-ce7d-9f7c-c430cc8c3e44">166 mídias</button>
+              </div>
+
+              <!-- Conteúdo da Aba de Postagens -->
+              <div class="tab-content active" id="posts-content" bis_skin_checked="1">
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 4px;
+                  " bis_skin_checked="1">
+                  <div class="post-card" style="margin-bottom: 20px" bis_skin_checked="1">
+                    <div class="post-header" bis_skin_checked="1">
+                      <div class="post-user" bis_skin_checked="1">
+                        
+                        <div bis_skin_checked="1">
+                          <h4>Heloisa Neves</h4>
+                          <p class="post-username">@heloisaneves</p>
+                        </div>
+                      </div>
+                      <button class="post-menu" id="2d2d9d3a-7db8-487e-55ed-633ed555ba44">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="1"></circle>
+                          <circle cx="12" cy="5" r="1"></circle>
+                          <circle cx="12" cy="19" r="1"></circle>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <!-- Substituído a imagem pelo vídeo com ícone de cadeado -->
+                    <div class="post-content" bis_skin_checked="1">
+                      <div class="post-video-container" style="height: 100%" bis_skin_checked="1">
+                        <video src="media/video.mp4" class="post-video" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="true" x-webkit-airplay="allow" preload="auto" style="height: 100%"></video>
+                        <div class="video-overlay" bis_skin_checked="1">
+                          <div class="lock-icon" bis_skin_checked="1">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                          </div>
+                          <div class="post-stats" bis_skin_checked="1">
+                            <div class="post-stat" bis_skin_checked="1">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                              </svg>
+                              <span>248</span>
+                            </div>
+
+                            <div class="post-stat" bis_skin_checked="1">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                              </svg>
+                              <span>126</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="post-actions" bis_skin_checked="1">
+                      <button class="action-button" id="2a32c093-d243-0ac9-1af7-d11b84ad2a42">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                      </button>
+                      <button class="action-button" id="82841413-7d2d-4a60-cb96-cd07c747d1a0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                      </button>
+
+                      <button class="action-button bookmark" id="8080b278-9be7-cf6c-ce34-fe27f7b08d07">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="post-card" style="margin-bottom: 20px" bis_skin_checked="1">
+                    <div class="post-header" bis_skin_checked="1">
+                      <div class="post-user" bis_skin_checked="1">
+                        
+                        <div bis_skin_checked="1">
+                          <h4>Heloisa Neves</h4>
+                          <p class="post-username">@heloisaneves</p>
+                        </div>
+                      </div>
+                      <button class="post-menu" id="5df99e95-8b66-cf5a-e1b0-48bdd81e236a">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="1"></circle>
+                          <circle cx="12" cy="5" r="1"></circle>
+                          <circle cx="12" cy="19" r="1"></circle>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <!-- Substituído a imagem pelo vídeo com ícone de cadeado -->
+                    <div class="post-content" bis_skin_checked="1">
+                      <div class="post-video-container" style="height: 100%" bis_skin_checked="1">
+                        <video src="media/video-2.mp4" class="post-video" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="true" x-webkit-airplay="allow" preload="auto" style="height: 100%"></video>
+                        <div class="video-overlay" bis_skin_checked="1">
+                          <div class="lock-icon" bis_skin_checked="1">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                          </div>
+                          <div class="post-stats" bis_skin_checked="1">
+                            <div class="post-stat" bis_skin_checked="1">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                              </svg>
+                              <span>549</span>
+                            </div>
+
+                            <div class="post-stat" bis_skin_checked="1">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                              </svg>
+                              <span>362</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="post-actions" bis_skin_checked="1">
+                      <button class="action-button" id="c7a2fbf8-90b4-5f90-202b-35e1df180029">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                      </button>
+                      <button class="action-button" id="14ec87f1-0d4d-877f-d789-41936ab444f3">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                      </button>
+
+                      <button class="action-button bookmark" id="e38c38c2-f404-96be-915b-e6a8805dbe85">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Conteúdo da Aba de Mídias -->
+            <div class="tab-content" id="media-content" bis_skin_checked="1">
+              <div class="media-subtabs" bis_skin_checked="1">
+                <button class="subtab active" data-subtab="all" id="8378c53c-8f38-9226-61ab-5f8b96fd78ea">
+                  166 todos
+                </button>
+                <button class="subtab" data-subtab="photos" id="2605d980-2ba1-adf0-b9db-daa240ded95b">102 fotos</button>
+                <button class="subtab" data-subtab="videos" id="1cf6e923-c768-f40e-af93-abe877de6230">64 vídeos</button>
+              </div>
+
+              <div class="media-grid" bis_skin_checked="1">
+                <div class="media-item" bis_skin_checked="1">
+                  
+                  <div class="lock-icon" bis_skin_checked="1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="media-item" bis_skin_checked="1">
+                  
+                  <div class="lock-icon" bis_skin_checked="1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="media-item" bis_skin_checked="1">
+                  
+                  <div class="lock-icon" bis_skin_checked="1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="media-item" bis_skin_checked="1">
+                  
+                  <div class="lock-icon" bis_skin_checked="1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="media-item" bis_skin_checked="1">
+                  
+                  <div class="lock-icon" bis_skin_checked="1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="media-item" bis_skin_checked="1">
+                  
+                  <div class="lock-icon" bis_skin_checked="1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </b></b></b>
+    </main>
+    <b><b>
+        <!-- Consentimento de Cookies -->
+        <div class="cookie-consent" bis_skin_checked="1" style="display: none;">
+          <div class="container cookie-container" bis_skin_checked="1">
+            <p>
+              O Privacy usa cookies e tecnologias semelhantes para fornecer,
+              manter e melhorar nossos serviços. Se você aceitar, usaremos esses
+              dados para personalização e análises associadas.
+            </p>
+            <button class="primary-button" id="96cd8fcf-3252-6b4e-32a6-c76e9c22b362">Aceitar</button>
+          </div>
+        </div>
+
+        
+
+        <title>Depoimentos com Fotos</title>
+
+        <section class="vip-offers">
+          <div class="vip-header" bis_skin_checked="1">
+            <h3 class="vip-title">Escolha seu <span>nível de acesso</span></h3>
+            <p class="vip-subtitle">Quanto mais perto, melhor a experiência.</p>
+          </div>
+
+          <div class="vip-grid" bis_skin_checked="1">
+            <div class="vip-card" bis_skin_checked="1">
+              <h4 class="vip-plan-title">Acesso mensal</h4>
+              <p class="vip-price">R$17,90</p>
+              <p class="vip-price-note">mensal</p>
+              <ul class="vip-features">
+                <li>Acesso ao feed exclusivo</li>
+                <li>Conteúdo diário</li>
+                <li>Chat limitado</li>
+              </ul>
+              <div class="vip-cta-wrap" bis_skin_checked="1">
+                <a href="https://checkoutseguro.ru/checkout/cmniic8tp03iy1ypdkooht6ld?offer=orevkle&amp;utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=" class="subscription-link" style="margin-bottom: 0" id="8be958f2-85b9-bc76-c459-424869d2e687">
+                  <button class="vip-cta" id="135684ba-181a-5d75-61a0-bbcc46ca60f9">ASSINAR</button>
+                </a>
+              </div>
+            </div>
+
+            <div class="vip-card is-featured" bis_skin_checked="1">
+              <div class="vip-popular" bis_skin_checked="1">MAIS POPULAR</div>
+              <h4 class="vip-plan-title">Trimestral +<br>fotinha personalizada</h4>
+              <p class="vip-price">R$29,57</p>
+              <p class="vip-price-note">trimestral</p>
+              <ul class="vip-features">
+                <li>Tudo do mensal</li>
+                <li>Fotinha da sua escolha</li>
+                <li>Stories exclusivos</li>
+                <li>Meu grupo VIP</li>
+              </ul>
+              <div class="vip-cta-wrap" bis_skin_checked="1">
+                <a href="https://checkoutseguro.ru/checkout/cmniirf9s03lx1ypd8buj1cme?offer=G5R4N1I&amp;utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=" class="subscription-link" style="margin-bottom: 0" id="5dec4f73-eee1-8287-0436-f974197ec3f0">
+                  <button class="vip-cta is-vibrating is-popular-like" id="e18f043a-d56d-86a8-d055-b5b0bd5834eb">QUERO ACESSO VIP AGORA</button>
+                </a>
+              </div>
+            </div>
+
+            <div class="vip-card" bis_skin_checked="1">
+              <h4 class="vip-plan-title">Acesso vitalício +<br>fetiches</h4>
+              <p class="vip-price">R$44,22</p>
+              <p class="vip-price-note">vitalício</p>
+              <ul class="vip-features">
+                <li>Tudo do mensal</li>
+                <li>Fotinha da sua escolha</li>
+                <li>Acesso antecipado a novos fetiches</li>
+                <li>Surpresinhas especiais</li>
+                <li>Meu grupo VIP</li>
+                <li>Chat privado comigo</li>
+                <li>Você fala seu fetiche e eu realizo</li>
+              </ul>
+              <div class="vip-cta-wrap" bis_skin_checked="1">
+                <a href="https://checkoutseguro.ru/checkout/cmniivwo004hc1rpdmdukidp2?offer=HZZ8G2Z&amp;utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=" class="subscription-link" style="margin-bottom: 0" id="75afff20-2b79-ec06-4354-a81318cfb44d">
+                  <button class="vip-cta" id="bce49ab5-c0e1-ca86-2319-6ba0e67e789f">ASSINAR</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <p class="vip-legal">🔒 Pagamento seguro • PIX • Fatura discreta</p>
+
+          <div class="vip-extra" bis_skin_checked="1">
+            <div class="vip-card is-featured" bis_skin_checked="1">
+              <div class="vip-popular" bis_skin_checked="1">MAIS POPULAR</div>
+              <h4 class="vip-plan-title">Grave comigo +<br>contato do WhatsApp</h4>
+              <p class="vip-price">R$72,90</p>
+              <p class="vip-price-note">vitalício</p>
+              <ul class="vip-features">
+                <li>Tudo do plano vitalício</li>
+                <li>Sorteio para gravação de conteúdos quentes comigo toda semana</li>
+              </ul>
+              <div class="vip-cta-wrap" bis_skin_checked="1">
+                <a href="https://checkoutseguro.ru/checkout/cmniiyg5403mu1ypdmyck66gg?offer=V7A4LEJ&amp;utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=" class="subscription-link" style="margin-bottom: 0" id="ca1546b9-a8ce-df12-0540-c0476125cdb8">
+                  <button class="vip-cta is-vibrating is-popular-like" id="7f762421-dd26-be19-b4c6-d22598341812">QUERO ACESSO VIP AGORA</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <h3 style="
+            display: none;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+          ">
+          📢 O que estão dizendo...
+        </h3>
+        <div style="display: none; overflow-x: auto; gap: 15px; padding: 10px 0" bis_skin_checked="1">
+          <div style="
+              flex: 0 0 auto;
+              width: 250px;
+              background: #fff;
+              border-radius: 10px;
+              padding: 12px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              white-space: normal;
+              text-align: center;
+            " bis_skin_checked="1">
+            
+            <strong>João Henrique, 32 anos</strong>
+            <p style="margin-top: 5px; font-size: 0.9rem">
+              “Não acreditava que seria tão bom por esse preço, achei q era
+              golpe essa prr mas o acesso foi instantâneo e o conteúdo é
+              incrível. Recomendo!”
+            </p>
+          </div>
+          <div style="
+              flex: 0 0 auto;
+              width: 250px;
+              background: #fff;
+              border-radius: 10px;
+              padding: 12px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              white-space: normal;
+              text-align: center;
+            " bis_skin_checked="1">
+            
+            <strong>Carlos Silva, 45 anos</strong>
+            <p style="margin-top: 5px; font-size: 0.9rem">
+              “Conteúdo, sem censura, bem melhor que esses sites por aí. E ainda
+              recebo no zap? Tô dentro
+            </p>
+          </div>
+          <div style="
+              flex: 0 0 auto;
+              width: 250px;
+              background: #fff;
+              border-radius: 10px;
+              padding: 12px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              white-space: normal;
+              text-align: center;
+            " bis_skin_checked="1">
+            
+            <strong>Reginaldo, 48 anos</strong>
+            <p style="margin-top: 5px; font-size: 0.9rem">
+              “Achei discreto demais! Impossivel desconfiar, ninguém desconfia
+              de nada 👌”
+            </p>
+          </div>
+          <div style="
+              flex: 0 0 auto;
+              width: 250px;
+              background: #fff;
+              border-radius: 10px;
+              padding: 12px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              white-space: normal;
+              text-align: center;
+            " bis_skin_checked="1">
+            
+            <strong>Marcelo Tavares, 31 anos</strong>
+            <p style="margin-top: 5px; font-size: 0.9rem">
+              “Tô no grupo VIP, recebo vídeo todo dia de manhã... é tipo meu bom
+              dia personalizado”
+            </p>
+          </div>
+          <div style="
+              flex: 0 0 auto;
+              width: 250px;
+              background: #fff;
+              border-radius: 10px;
+              padding: 12px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              white-space: normal;
+              text-align: center;
+            " bis_skin_checked="1">
+            
+            <strong>Fábio C, 42 anos</strong>
+            <p style="margin-top: 5px; font-size: 0.9rem">
+              “Com 22 reais eu não compro nem um lanche... preferi meter na
+              assinatura e não me arrependi,muito delicia p&gt;
+            </p>
+          </div>
+          <div style="
+              flex: 0 0 auto;
+              width: 250px;
+              background: #fff;
+              border-radius: 10px;
+              padding: 12px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              white-space: normal;
+              text-align: center;
+            " bis_skin_checked="1">
+            
+            <strong>Anônimo</strong>
+            <p style="margin-top: 5px; font-size: 0.9rem">
+              “Confesso que achei que ia ser só nude... mas veio vídeo metendo
+              mesmo, tesão demais
+            </p>
+          </div>
+
+          <div style="
+              flex: 0 0 auto;
+              width: 250px;
+              background: #fff;
+              border-radius: 10px;
+              padding: 12px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              white-space: normal;
+              text-align: center;
+            " bis_skin_checked="1">
+            
+            <strong>Fernando, 52 anos</strong>
+            <p style="margin-top: 5px; font-size: 0.9rem">
+              “Acesso imediato, tudo liberado e ainda ganhei pack de
+              boas-vindas. Que isso.”
+            </p>
+          </div>
+          <div style="
+              flex: 0 0 auto;
+              width: 250px;
+              background: #fff;
+              border-radius: 10px;
+              padding: 12px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              white-space: normal;
+              text-align: center;
+            " bis_skin_checked="1">
+            
+            <strong>Luan Rocha</strong>
+            <p style="margin-top: 5px; font-size: 0.9rem">
+              “Ela mandou áudio me agradecendo depois da assinatura... quase
+              gozei só com isso kkkkkk
+            </p>
+          </div>
+        </div>
+
+        <section class="testimonials-list-section">
+          <h3 class="testimonials-list-title">📢 O que estão dizendo...</h3>
+          <div class="testimonials-stack" bis_skin_checked="1">
+            <div class="testimonial-list-card" bis_skin_checked="1">
+              
+              <div class="testimonial-list-content" bis_skin_checked="1">
+                <strong>Rafael Monteiro, 29 anos</strong>
+                <p>"Mano, achei que era conversa fiada por esse valor, mas paguei e o acesso foi na hora. Curti demais, valeu cada centavo!"</p>
+              </div>
+            </div>
+
+            <div class="testimonial-list-card" bis_skin_checked="1">
+              
+              <div class="testimonial-list-content" bis_skin_checked="1">
+                <strong>Eduardo Pacheco, 47 anos</strong>
+                <p>"Conteúdo sem frescura, bem melhor que esses sites genéricos. E ainda chega direto no zap? Aí sim."</p>
+              </div>
+            </div>
+
+            <div class="testimonial-list-card" bis_skin_checked="1">
+              
+              <div class="testimonial-list-content" bis_skin_checked="1">
+                <strong>Márcio Nunes, 50 anos</strong>
+                <p>"Discrição total! Ninguém desconfia de nada, do jeito que tem que ser 👌"</p>
+              </div>
+            </div>
+
+            <div class="testimonial-list-card" bis_skin_checked="1">
+              
+              <div class="testimonial-list-content" bis_skin_checked="1">
+                <strong>Thiago Barreto, 33 anos</strong>
+                <p>"Tô no VIP e todo dia tem coisa nova de manhã... já virou meu ritual, melhor que café 😂"</p>
+              </div>
+            </div>
+
+            <div class="testimonial-list-card" bis_skin_checked="1">
+              
+              <div class="testimonial-list-content" bis_skin_checked="1">
+                <strong>Leandro F., 40 anos</strong>
+                <p>"Com esse valor eu não compro nem um lanche direito... preferi assinar e não me arrependi nem um pouco, bom demais."</p>
+              </div>
+            </div>
+
+            <div class="testimonial-list-card" bis_skin_checked="1">
+              
+              <div class="testimonial-list-content" bis_skin_checked="1">
+                <strong>Anônimo</strong>
+                <p>"Confesso que achei que ia ser só nude... mas veio vídeo metendo mesmo, tesão demais"</p>
+              </div>
+            </div>
+
+            <div class="testimonial-list-card" bis_skin_checked="1">
+              
+              <div class="testimonial-list-content" bis_skin_checked="1">
+                <strong>Paulo Sérgio, 54 anos</strong>
+                <p>"Acesso na hora, tudo liberado e ainda veio um bônus de boas-vindas. Surpreendeu demais."</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+        <section style="
+            padding: 30px 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            border-radius: 10px;
+            background: #f9f9f9;
+          ">
+          <h2 style="
+              text-align: center;
+              font-size: 22px;
+              color: #ff6d00;
+              margin-bottom: 20px;
+            ">
+            Perguntas Frequentes
+          </h2>
+
+          <details style="
+              margin-bottom: 15px;
+              border: 1px solid #eee;
+              border-radius: 8px;
+              padding: 10px 15px;
+            ">
+            <summary style="font-weight: bold; cursor: pointer">
+              O conteúdo é realmente explícito?
+            </summary>
+            <p style="margin-top: 10px">
+              Sim! Todo o conteúdo é 100% explícito e sem censura. Você terá
+              acesso ao que mais deseja ver.
+            </p>
+          </details>
+
+          <details style="
+              margin-bottom: 15px;
+              border: 1px solid #eee;
+              border-radius: 8px;
+              padding: 10px 15px;
+            ">
+            <summary style="font-weight: bold; cursor: pointer">
+              O pagamento é seguro e discreto?
+            </summary>
+            <p style="margin-top: 10px">
+              Totalmente! Seu pagamento é Discreto e ninguém saberá do que se
+              trata.
+            </p>
+          </details>
+
+          <details style="
+              margin-bottom: 15px;
+              border: 1px solid #eee;
+              border-radius: 8px;
+              padding: 10px 15px;
+            ">
+            <summary style="font-weight: bold; cursor: pointer">
+              Como vou receber o conteúdo?
+            </summary>
+            <p style="margin-top: 10px">
+              Após o pagamento via Pix, você receberá o acesso direto no seu
+              E-mail em até 2 minutos.
+            </p>
+          </details>
+
+          <details style="
+              margin-bottom: 15px;
+              border: 1px solid #eee;
+              border-radius: 8px;
+              padding: 10px 15px;
+            ">
+            <summary style="font-weight: bold; cursor: pointer">
+              E se eu tiver problemas com o acesso?
+            </summary>
+            <p style="margin-top: 10px">
+              Você poderá entrar em contato direto com o suporte no WhatsApp que
+              será enviado junto ao conteúdo.
+            </p>
+          </details>
+          
+        </section> </b></b>
+  
+
+    </div>
+
+    
+
+
+<div id="extension-pdbfi" bis_skin_checked="1"></div></body><div bis_skin_checked="1"></div></html>
