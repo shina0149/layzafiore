@@ -258,6 +258,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Health check endpoint (used by UptimeRobot to keep server alive)
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok', uptime: process.uptime() });
+});
+
 // SECURITY: Catch-all for undefined routes
 app.use((req, res) => {
     res.status(404).json({ error: 'Not found' });
