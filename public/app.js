@@ -137,4 +137,70 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       }, 3000);
   }
+
+  // ========== Countdown Timer ==========
+  function initCountdown() {
+      const hoursEl = document.getElementById('countdown-hours');
+      const minutesEl = document.getElementById('countdown-minutes');
+      const secondsEl = document.getElementById('countdown-seconds');
+
+      if (!hoursEl || !minutesEl || !secondsEl) return;
+
+      let totalSeconds = 1 * 3600 + 1 * 60 + 1; // 1h 1m 1s
+
+      function updateCountdown() {
+          const h = Math.floor(totalSeconds / 3600);
+          const m = Math.floor((totalSeconds % 3600) / 60);
+          const s = totalSeconds % 60;
+
+          hoursEl.textContent = String(h).padStart(2, '0');
+          minutesEl.textContent = String(m).padStart(2, '0');
+          secondsEl.textContent = String(s).padStart(2, '0');
+
+          if (totalSeconds <= 0) {
+              totalSeconds = 1 * 3600 + 1 * 60 + 1;
+          } else {
+              totalSeconds--;
+          }
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+  }
+
+  initCountdown();
+
+  // ========== Social Proof Popup ==========
+  function initSocialProof() {
+      const popup = document.getElementById('social-proof-popup');
+      if (!popup) return;
+
+      const names = [
+          'Lucas M.', 'André S.', 'Felipe R.', 'Guilherme P.',
+          'Mateus B.', 'Pedro H.', 'Diego C.', 'Ricardo T.',
+          'Bruno L.', 'Marcos V.', 'Caio A.', 'Vinícius F.'
+      ];
+
+      function showPopup() {
+          const name = names[Math.floor(Math.random() * names.length)];
+          popup.innerHTML = `<span class="social-proof-icon">🔔</span> ${name} acabou de <strong>Assinar um Plano!</strong>`;
+          popup.classList.add('visible');
+
+          setTimeout(() => {
+              popup.classList.remove('visible');
+          }, 4000);
+      }
+
+      // Show first popup after 5s delay
+      setTimeout(() => {
+          showPopup();
+          // Then repeat every 8-15 seconds randomly
+          setInterval(() => {
+              const delay = Math.floor(Math.random() * 7000) + 8000;
+              setTimeout(showPopup, delay);
+          }, 15000);
+      }, 5000);
+  }
+
+  initSocialProof();
 });

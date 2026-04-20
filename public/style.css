@@ -382,47 +382,193 @@ ul.benefits li::before {
   box-shadow: 0 6px 24px rgba(255, 0, 85, 0.35) !important;
 }
 
-/* ========== Testimonials ========== */
-.testimonials-grid {
+/* ========== Urgency Banner ========== */
+.urgency-banner {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: var(--radius);
+  margin: 16px 0;
+  padding: 32px 24px;
+  text-align: center;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 30px rgba(255, 109, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 109, 0, 0.08) 0%, transparent 70%);
+  animation: urgencyGlow 4s ease-in-out infinite;
+}
+
+@keyframes urgencyGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.urgency-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.urgency-banner h3 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.urgency-subtitle {
+  color: #fdd835;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.countdown-wrapper {
   display: flex;
-  overflow-x: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.countdown-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  font-size: 36px;
+  font-weight: 900;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(255, 109, 0, 0.4);
+  font-family: var(--font);
+  letter-spacing: 2px;
+}
+
+.countdown-label {
+  color: #999;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-separator {
+  color: var(--primary);
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.urgency-footer {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ========== Testimonials V2 ========== */
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
   gap: 14px;
-  padding-bottom: 12px;
-  scroll-snap-type: x mandatory;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
-.testimonials-grid::-webkit-scrollbar {
-  display: none;
-}
-
-.testimonial-card {
-  min-width: 260px;
+.testimonial-card-v2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
   background: var(--bg-section);
   padding: 20px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-light);
-  scroll-snap-align: start;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.testimonial-card:hover {
+.testimonial-card-v2:hover {
   transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
-.testimonial-author {
+.testimonial-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+
+.testimonial-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.testimonial-author-v2 {
   font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 8px;
-  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 4px;
+  font-size: 15px;
 }
 
-.testimonial-card p {
+.testimonial-card-v2 p {
   color: var(--text-secondary);
   font-size: 14px;
-  font-style: italic;
   line-height: 1.5;
+}
+
+/* ========== Social Proof Popup ========== */
+.social-proof-popup {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: linear-gradient(135deg, #f7977a 0%, #f0866c 100%);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font);
+  box-shadow: 0 6px 24px rgba(247, 151, 122, 0.45);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateX(-120%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  pointer-events: none;
+  max-width: calc(100vw - 48px);
+}
+
+.social-proof-popup.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.social-proof-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.social-proof-popup strong {
+  font-weight: 800;
 }
 
 /* ========== FAQ ========== */

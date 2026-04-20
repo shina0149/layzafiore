@@ -27,6 +27,31 @@
       <a href="#ofertas" class="primary-button pulse" style="display:inline-block; text-decoration:none; max-width:320px;">Quero o conteúdo agora!</a>
     </header>
 
+    <!-- Urgency Banner -->
+    <section class="urgency-banner">
+      <div class="urgency-inner">
+        <h3>🔥 OFERTA COM TEMPO LIMITADO 🔥</h3>
+        <p class="urgency-subtitle">⚡ Apenas <strong>16 unidades</strong> disponíveis!</p>
+        <div class="countdown-wrapper">
+          <div class="countdown-block">
+            <span id="countdown-hours" class="countdown-number">01</span>
+            <span class="countdown-label">HORAS</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-block">
+            <span id="countdown-minutes" class="countdown-number">01</span>
+            <span class="countdown-label">MINUTOS</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-block">
+            <span id="countdown-seconds" class="countdown-number">01</span>
+            <span class="countdown-label">SEGUNDOS</span>
+          </div>
+        </div>
+        <p class="urgency-footer">🚨 Não perca! A oferta expira em breve</p>
+      </div>
+    </section>
+
     <!-- Para Quem É -->
     <section class="section">
       <h2>Para quem é este <span>conteúdo</span>?</h2>
@@ -58,22 +83,41 @@
       <h2>O que estão <span>dizendo</span>... 👀</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 20px; font-size: 14px;">Resultados típicos dos assinantes do meu grupo secreto VIP</p>
       
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-author">João Henrique, 32</div>
-          <p>"Achei que era golpe, mas o acesso foi instantâneo e o conteúdo é incrível. Recomendo!"</p>
+      <div class="testimonials-list">
+        <div class="testimonial-card-v2">
+          <img src="cliente1.jpg" alt="Rafael" class="testimonial-avatar">
+          <div class="testimonial-body">
+            <div class="testimonial-author-v2">Rafael Monteiro, 29 anos</div>
+            <p>"Mano, achei que era conversa fiada por esse valor, mas paguei e o acesso foi na hora. Curti demais, valeu cada centavo!"</p>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-author">Carlos Silva, 45</div>
-          <p>"Conteúdo sem censura, bem melhor que esses sites por aí. Mídia direto no telegram!"</p>
+        <div class="testimonial-card-v2">
+          <img src="cliente2.jpeg" alt="Eduardo" class="testimonial-avatar">
+          <div class="testimonial-body">
+            <div class="testimonial-author-v2">Eduardo Pacheco, 47 anos</div>
+            <p>"Conteúdo sem frescura, bem melhor que esses sites genéricos. E ainda chega direto no zap? Aí sim."</p>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-author">Fábio C, 42</div>
-          <p>"Com 20 reais não compro nem um lanche, mas assinei isso e não me arrependi. Muito delícia 🤤"</p>
+        <div class="testimonial-card-v2">
+          <img src="cliente3.jpg" alt="Márcio" class="testimonial-avatar">
+          <div class="testimonial-body">
+            <div class="testimonial-author-v2">Márcio Nunes, 50 anos</div>
+            <p>"Discrição total! Ninguém desconfia de nada, do jeito que tem que ser 👌"</p>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-author">Anônimo</div>
-          <p>"Tô no grupo VIP, recebo vídeo de bom dia todo dia de manhã... melhor investimento kkk"</p>
+        <div class="testimonial-card-v2">
+          <img src="cliente4.jpg" alt="Thiago" class="testimonial-avatar">
+          <div class="testimonial-body">
+            <div class="testimonial-author-v2">Thiago Barreto, 33 anos</div>
+            <p>"Tô no VIP e todo dia tem coisa nova de manhã... já virou meu ritual, melhor que café 😄"</p>
+          </div>
+        </div>
+        <div class="testimonial-card-v2">
+          <img src="cliente5.jpg" alt="Leandro" class="testimonial-avatar">
+          <div class="testimonial-body">
+            <div class="testimonial-author-v2">Leandro F., 40 anos</div>
+            <p>"Com esse valor eu não compro nem um lanche direito... preferi assinar e não me arrependi nem um pouco, bom demais."</p>
+          </div>
         </div>
       </div>
     </section>
@@ -223,6 +267,12 @@
       <p style="margin-top:5px;">Este site vende links de acesso privado. Não vendemos assinaturas recorrentes sem aviso prévio.</p>
     </footer>
 
+  </div>
+
+  <!-- Social Proof Popup -->
+  <div id="social-proof-popup" class="social-proof-popup">
+    <span class="social-proof-icon">🔔</span>
+    Alguém acabou de <strong>Assinar um Plano!</strong>
   </div>
 
   <script src="app.js"></script>
