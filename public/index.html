@@ -52,29 +52,91 @@
       </div>
     </section>
 
-    <!-- Para Quem É -->
-    <section class="section">
-      <h2>Para quem é este <span>conteúdo</span>?</h2>
-      <ul class="benefits">
-        <li>Para quem gosta de conteúdos caseiros e reais</li>
-        <li>Para quem quer uma experiência VIP mais próxima</li>
-        <li>Para quem cansou de sites genéricos e procura novidade</li>
-        <li>Para quem busca atualização constante de mídia</li>
-      </ul>
-      <p style="margin-top: 15px; color: var(--text-muted); font-size: 13px;"><strong>Para quem NÃO é:</strong> Menores de 18 anos ou quem procura apenas conteúdo gratuito.</p>
+    <!-- Video Previews -->
+    <section class="section video-preview-section">
+      <h2>Uma <span>provinha</span> do que te espera... 👀🔥</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 24px; font-size: 14px;">Clique para assistir o preview</p>
+      <div class="video-grid">
+        <div class="video-wrapper" id="video-wrapper-1">
+          <video id="preview-video-1" src="video1.mp4" loop playsinline preload="metadata"></video>
+          <div class="video-overlay" id="video-overlay-1">
+            <div class="play-button-circle">
+              <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><polygon points="8,5 19,12 8,19"/></svg>
+            </div>
+            <span class="video-label">Video 1</span>
+          </div>
+        </div>
+        <div class="video-wrapper" id="video-wrapper-2">
+          <video id="preview-video-2" src="video2.mp4" loop playsinline preload="metadata"></video>
+          <div class="video-overlay" id="video-overlay-2">
+            <div class="play-button-circle">
+              <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><polygon points="8,5 19,12 8,19"/></svg>
+            </div>
+            <span class="video-label">Video 2</span>
+          </div>
+        </div>
+      </div>
+      <p class="video-cta">🔓 Assine um plano para acessar o conteúdo completo sem censura</p>
     </section>
 
-    <!-- O Que Você Vai Receber -->
-    <section class="section">
-      <h2>O que você vai <span>receber</span> 🎁</h2>
-      <ul class="benefits">
-        <li>Acesso ao meu acervo completo: <strong>+160 mídias (Fotos e Vídeos)</strong></li>
-        <li>Esguichadas e vídeos bem picantes e sem censura</li>
-        <li>Atualizações semanais (novos packs)</li>
-      </ul>
-      <div class="bonus-box">
-        <h4>🔥 BÔNUS EXCLUSIVOS:</h4>
-        <p>Os planos premium incluem contato direto no meu WhatsApp pessoal, chamadas de vídeo e gravação ao vivo comigo!</p>
+    <!-- Oferta + Preço -->
+    <section class="section" id="ofertas">
+      <h2>Escolha seu nível de <span>acesso</span> 😈</h2>
+      
+      <div class="vip-grid" id="plan-selection">
+        
+        <!-- Plano 1 -->
+        <div class="vip-card">
+          <h4 class="vip-plan-title">Acesso mensal</h4>
+          <p class="vip-price">R$ 17,90</p>
+          <p class="vip-price-note">Acesso por 30 dias</p>
+          <ul class="vip-features">
+            <li>Acesso ao feed exclusivo</li>
+            <li>Conteúdo diário</li>
+          </ul>
+          <button class="primary-button btn-select-plan" data-plan="mensal" data-name="Acesso mensal - R$ 17,90">COMPRAR AGORA</button>
+        </div>
+
+        <!-- Plano 2 -->
+        <div class="vip-card is-featured">
+          <div class="vip-popular">MAIS POPULAR</div>
+          <h4 class="vip-plan-title">Trimestral + Fotinha</h4>
+          <p class="vip-price">R$ 26,90</p>
+          <p class="vip-price-note">Acesso por 90 dias</p>
+          <ul class="vip-features">
+            <li>Tudo do mensal</li>
+            <li>Fotinha com seu nome/texto</li>
+            <li>Meu grupo VIP</li>
+          </ul>
+          <button class="primary-button btn-select-plan pulse" data-plan="trimestral" data-name="Trimestral + Fotinha - R$ 26,90">COMPRAR AGORA</button>
+        </div>
+
+        <!-- Plano 3 -->
+        <div class="vip-card">
+          <h4 class="vip-plan-title">Vitalício + Fetiches</h4>
+          <p class="vip-price">R$ 45,90</p>
+          <p class="vip-price-note">Acesso para sempre</p>
+          <ul class="vip-features">
+            <li>Tudo do trimestral</li>
+            <li>Chat privado comigo</li>
+            <li>Peça seu fetiche personalizado</li>
+          </ul>
+          <button class="primary-button btn-select-plan" data-plan="vitalicio" data-name="Vitalício + Fetiches - R$ 45,90">COMPRAR AGORA</button>
+        </div>
+
+        <!-- Plano 4 -->
+        <div class="vip-card is-featured" style="border-color: #ff0055;">
+          <div class="vip-popular" style="background: linear-gradient(135deg, #ff0055, #cc0044);">SUPER VIP</div>
+          <h4 class="vip-plan-title">Grave Comigo + Whats</h4>
+          <p class="vip-price" style="color: #ff0055;">R$ 72,90</p>
+          <p class="vip-price-note">Vida toda</p>
+          <ul class="vip-features">
+            <li>Tudo do vitalício</li>
+            <li>Acesso ao meu WhatsApp Pessoal</li>
+            <li>Chamadas de vídeo diárias</li>
+          </ul>
+          <button class="primary-button btn-select-plan btn-super-vip" data-plan="grave_comigo" data-name="Grave Comigo + Whats - R$ 72,90">COMPRAR AGORA</button>
+        </div>
       </div>
     </section>
 
@@ -141,66 +203,7 @@
       </div>
     </section>
 
-    <!-- Oferta + Preço -->
-    <section class="section" id="ofertas">
-      <h2>Escolha seu nível de <span>acesso</span> 😈</h2>
-      
-      <div class="vip-grid" id="plan-selection">
-        
-        <!-- Plano 1 -->
-        <div class="vip-card">
-          <h4 class="vip-plan-title">Acesso mensal</h4>
-          <p class="vip-price">R$ 17,90</p>
-          <p class="vip-price-note">Acesso por 30 dias</p>
-          <ul class="vip-features">
-            <li>Acesso ao feed exclusivo</li>
-            <li>Conteúdo diário</li>
-          </ul>
-          <button class="primary-button btn-select-plan" data-plan="mensal" data-name="Acesso mensal - R$ 17,90">COMPRAR AGORA</button>
-        </div>
 
-        <!-- Plano 2 -->
-        <div class="vip-card is-featured">
-          <div class="vip-popular">MAIS POPULAR</div>
-          <h4 class="vip-plan-title">Trimestral + Fotinha</h4>
-          <p class="vip-price">R$ 26,90</p>
-          <p class="vip-price-note">Acesso por 90 dias</p>
-          <ul class="vip-features">
-            <li>Tudo do mensal</li>
-            <li>Fotinha com seu nome/texto</li>
-            <li>Meu grupo VIP</li>
-          </ul>
-          <button class="primary-button btn-select-plan pulse" data-plan="trimestral" data-name="Trimestral + Fotinha - R$ 26,90">COMPRAR AGORA</button>
-        </div>
-
-        <!-- Plano 3 -->
-        <div class="vip-card">
-          <h4 class="vip-plan-title">Vitalício + Fetiches</h4>
-          <p class="vip-price">R$ 45,90</p>
-          <p class="vip-price-note">Acesso para sempre</p>
-          <ul class="vip-features">
-            <li>Tudo do trimestral</li>
-            <li>Chat privado comigo</li>
-            <li>Peça seu fetiche personalizado</li>
-          </ul>
-          <button class="primary-button btn-select-plan" data-plan="vitalicio" data-name="Vitalício + Fetiches - R$ 45,90">COMPRAR AGORA</button>
-        </div>
-
-        <!-- Plano 4 -->
-        <div class="vip-card is-featured" style="border-color: #ff0055;">
-          <div class="vip-popular" style="background: linear-gradient(135deg, #ff0055, #cc0044);">SUPER VIP</div>
-          <h4 class="vip-plan-title">Grave Comigo + Whats</h4>
-          <p class="vip-price" style="color: #ff0055;">R$ 72,90</p>
-          <p class="vip-price-note">Vida toda</p>
-          <ul class="vip-features">
-            <li>Tudo do vitalício</li>
-            <li>Acesso ao meu WhatsApp Pessoal</li>
-            <li>Chamadas de vídeo diárias</li>
-          </ul>
-          <button class="primary-button btn-select-plan btn-super-vip" data-plan="grave_comigo" data-name="Grave Comigo + Whats - R$ 72,90">COMPRAR AGORA</button>
-        </div>
-      </div>
-    </section>
 
     <!-- Modal do Checkout -->
     <div id="checkout-modal" class="modal-overlay">

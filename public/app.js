@@ -203,4 +203,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initSocialProof();
+
+  // ========== Video Previews (Play/Pause) ==========
+  function initVideoPreviews() {
+    const wrappers = document.querySelectorAll('.video-wrapper');
+
+    wrappers.forEach(wrapper => {
+      const video = wrapper.querySelector('video');
+      if (!video) return;
+
+      wrapper.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          wrapper.classList.add('playing');
+        } else {
+          video.pause();
+          wrapper.classList.remove('playing');
+        }
+      });
+    });
+  }
+
+  initVideoPreviews();
 });
