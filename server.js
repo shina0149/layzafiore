@@ -32,10 +32,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // SECURITY: Server-side plan definitions (prices NEVER come from frontend)
 const PLANS = {
-    'mensal':       { name: 'Acesso mensal',               amount: 17.90 }, 
-    'trimestral':   { name: 'Trimestral + Fotinha',         amount: 26.90 },
-    'vitalicio':    { name: 'Acesso vitalício + Fetiches',  amount: 45.90 },
-    'grave_comigo': { name: 'Grave comigo + WhatsApp',      amount: 72.90 }
+    'mensal':       { name: 'Acesso mensal',               amount: 6.90 }, 
+    'trimestral':   { name: 'Trimestral + Fotinha',         amount: 10.90 },
+    'vitalicio':    { name: 'Acesso vitalício + Fetiches',  amount: 15.90 },
+    'grave_comigo': { name: 'Grave comigo + WhatsApp',      amount: 30.90 }
 };
 
 // JWT token cache
